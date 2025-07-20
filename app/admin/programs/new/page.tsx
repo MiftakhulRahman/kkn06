@@ -25,7 +25,7 @@ export default function NewProgramPage() {
       start_date: startDate,
       end_date: endDate,
       status,
-      responsible_person: user.id,
+      responsible_person: user!.id,
     });
     if (error) {
       setError(error.message);
