@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase'
 import { useAuth } from '@/hooks/use-auth'
 import { ImageUpload } from '@/components/common/image-upload'
 import { LoaderCircle } from 'lucide-react'
+import Image from 'next/image'
 
 type PostFormProps = {
   postId?: string // Jika ada postId, berarti ini mode edit

@@ -4,6 +4,7 @@ import { useState, useEffect, use } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useAuth } from '@/hooks/use-auth'
 import { CalendarDays, User, Tag, MessageSquare, Send, LoaderCircle } from 'lucide-react'
+import Link from 'next/link'
 
 // Helper untuk format tanggal
 function formatDate(dateString: string) {
@@ -104,11 +105,11 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
           <nav className="text-sm mb-4" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2 text-slate-500">
               <li>
-                <a href="/" className="hover:underline">Beranda</a>
+                <Link href="/" className="hover:underline">Beranda</Link>
                 <span className="mx-1">/</span>
               </li>
               <li>
-                <a href="/blog" className="hover:underline">Blog</a>
+                <Link href="/blog" className="hover:underline">Blog</Link>
                 <span className="mx-1">/</span>
               </li>
               <li className="text-slate-700 font-semibold truncate max-w-[120px] sm:max-w-xs md:max-w-md lg:max-w-lg" title={post.title}>{post.title}</li>
@@ -193,7 +194,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
               </form>
             ) : (
                 <div className="mt-8 rounded-lg border-2 border-dashed border-slate-200 p-6 text-center">
-                    <p className="text-slate-600">Anda harus <a href="/login" className="font-semibold text-[#1A5F4D] hover:underline">login</a> untuk dapat meninggalkan komentar.</p>
+                    <p className="text-slate-600">Anda harus <Link href="/login" className="font-semibold text-[#1A5F4D] hover:underline">login</Link> untuk dapat meninggalkan komentar.</p>
                 </div>
             )}
             

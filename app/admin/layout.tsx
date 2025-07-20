@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Admin Panel - KKN 06 Desa Taman Harjo',
@@ -19,12 +20,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-500">KKN 06 Desa Taman Harjo</span>
-              <a 
+              <Link 
                 href="/" 
                 className="text-sm text-blue-600 hover:text-blue-800"
               >
                 Lihat Website
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -34,48 +35,48 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-8 py-3">
-            <a 
+            <Link 
               href="/admin" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Dashboard
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/posts" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Posts
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/categories" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Categories
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/programs" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Programs
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/media" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Media
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/users" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Users
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/admin/comments" 
               className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium"
             >
               Comments
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
