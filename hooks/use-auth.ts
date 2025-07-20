@@ -4,8 +4,19 @@ import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import { getCurrentUser, signOut } from '@/lib/auth'
 
-export function useAuth() {
-  const [user, setUser] = useState(null)
+// Add User type based on profiles table
+export type User = {
+  id: string
+  name: string
+  email: string | null
+  role: string
+  bio: string | null
+  avatar_url: string | null
+  created_at: string
+}
+
+export function useAuth(): { user: User | null, loading: boolean, signOut: typeof signOut } {
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

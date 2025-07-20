@@ -64,7 +64,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
       post_id: post.id,
       // Gunakan user.id dari sesi otentikasi jika ada
       author_id: user.id,
-      author_name: user.user_metadata?.name || 'Anonim', // Fallback ke metadata
+      author_name: user.name || 'Anonim', // Fallback ke nama profil
       content: newComment,
       // Status 'pending' adalah default di database, jadi ini bisa dihilangkan jika cocok
       status: 'pending' 

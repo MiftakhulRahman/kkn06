@@ -118,7 +118,7 @@ export default function Home() {
   };
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+    visible: { opacity: 1, scale: 1 }
   };
 
   return (
@@ -244,6 +244,7 @@ export default function Home() {
                 <motion.div
                   key={program.id}
                   variants={itemVariants}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   style={{ willChange: 'opacity, transform' }}
                   className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col h-full transition-all duration-300 hover:border-emerald-400 hover:-translate-y-1 hover:shadow-sm"
                 >
@@ -290,6 +291,7 @@ export default function Home() {
                 <motion.div
                     key={post.id}
                     variants={itemVariants}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     style={{ willChange: 'opacity, transform' }}
                 >
                   <Link href={`/blog/${post.slug}`} className="block group">
@@ -354,6 +356,7 @@ export default function Home() {
                             key={item.id}
                             className={`relative h-full rounded-xl overflow-hidden group border border-slate-200 ${i === 0 || i === 5 ? 'md:col-span-2' : ''} ${i === 2 ? 'md:row-span-2' : ''}`}
                             variants={itemVariants}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
                             style={{ willChange: 'opacity, transform' }}
                         >
                             {isValidImageUrl(item.url) ? (
@@ -393,6 +396,7 @@ export default function Home() {
             <motion.div
                 key={member.nama}
                 variants={itemVariants}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 style={{ willChange: 'opacity, transform' }}
                 className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-slate-200"
             >

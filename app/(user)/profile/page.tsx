@@ -34,8 +34,9 @@ export default function ProfilePage() {
     }
   };
 
-  const handleSave = async (e) => {
+  const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!user) return;
     setSaving(true);
     setError("");
     setSuccess("");
@@ -126,7 +127,8 @@ export default function ProfilePage() {
                 onError={(e) => {
                   console.error("Image failed to load:", avatarUrl);
                   e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling.style.display = 'flex';
+                  const next = e.currentTarget.nextElementSibling as HTMLElement | null;
+                  if (next) next.style.display = 'flex';
                 }}
               />
             ) : null}
@@ -162,7 +164,7 @@ export default function ProfilePage() {
           <input
             type="email"
             className="border rounded px-3 py-2 w-full bg-gray-100"
-            value={user.email}
+            value={user.email ?? ""}
             disabled
           />
         </div>
